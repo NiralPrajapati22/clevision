@@ -1,0 +1,29 @@
+const students = [
+  { name: 'Aarav', marks: 78, passed: true, subject: 'Math' },
+  { name: 'Diya', marks: 42, passed: false, subject: 'Science' },
+  { name: 'Kabir', marks: 88, passed: true, subject: 'Math' },
+  { name: 'Meera', marks: 65, passed: true, subject: 'English' },
+  { name: 'Rohan', marks: 38, passed: false, subject: 'Science' },
+  { name: 'Isha', marks: 92, passed: true, subject: 'Math' },
+  { name: 'Vivaan', marks: 75, passed: true, subject: 'English' },
+  { name: 'Anaya', marks: 70, passed: true, subject: 'Science' }
+];
+
+const filteredStudents = students.filter(student => student.passed && student.marks >= 70);
+
+
+const totalMarks = filteredStudents.reduce((sum, student) => sum + student.marks, 0);
+const toppersMap = filteredStudents.reduce((acc, student) => {
+  const currentTopper = acc[student.subject];
+ 
+  if (!currentTopper || student.marks > currentTopper.marks) {
+    acc[student.subject] = { name: student.name, marks: student.marks, subject: student.subject };
+  }
+  return acc;
+}, {});
+
+const subjectToppers = Object.values(toppersMap);
+
+console.log("Filtered Students Count:", filteredStudents.length);
+console.log("Total Marks:", totalMarks);
+console.log("Subject Toppers:", subjectToppers);

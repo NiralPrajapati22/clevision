@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clevision</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hero {
+            margin-top: 80px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero-text,
+        .hero-img {
+            flex: 1;
+        }
+
+        .hero-img img {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0066cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Clevision</a>
+            <button class="toggle" onclick="document.getElementById('m').classList.toggle('show')">☰</button>
+            <ul class="menu" id="m">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Building the Future of Web</h1>
+            <p>We create fast, modern, responsive websites tailored to your business goals. Our design approach focuses
+                on speed, clarity, and exceptional user experience across all digital screens.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://placehold.co" alt="Web Build Mockup">
+        </div>
+    </main>
+
+</body>
+
+</html>
